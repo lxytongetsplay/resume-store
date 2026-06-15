@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Templates by Layton — Land Your Dream Job</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#f0f0f0;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+
+  /* NAV */
+  nav{padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1e1e1e;position:sticky;top:0;background:#0a0a0a;z-index:100}
+  .logo{font-size:16px;font-weight:600;color:#fff}
+  .logo span{color:#6366f1}
+  .nav-cta{background:#6366f1;color:#fff;padding:8px 18px;border-radius:8px;font-size:14px;font-weight:500}
+
+  /* HERO */
+  .hero{text-align:center;padding:5rem 2rem 4rem;max-width:700px;margin:0 auto}
+  .hero-badge{display:inline-block;background:#1e1e2e;color:#a5b4fc;font-size:12px;padding:6px 14px;border-radius:20px;margin-bottom:1.5rem;border:1px solid #2e2e4e}
+  .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.2;margin-bottom:1rem;color:#fff}
+  .hero h1 span{color:#6366f1}
+  .hero p{font-size:1.1rem;color:#888;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+  .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn-primary{background:#6366f1;color:#fff;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;border:none;transition:all 0.2s}
+  .btn-primary:hover{background:#5254cc;transform:translateY(-1px)}
+  .btn-secondary{background:transparent;color:#f0f0f0;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:500;cursor:pointer;border:1px solid #333;transition:all 0.2s}
+  .btn-secondary:hover{border-color:#6366f1;color:#a5b4fc}
+
+  /* SOCIAL PROOF */
+  .proof{text-align:center;padding:2rem;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;background:#111}
+  .proof-inner{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;max-width:600px;margin:0 auto}
+  .proof-stat{font-size:13px;color:#888}
+  .proof-stat strong{color:#f0f0f0;display:block;font-size:20px;font-weight:700}
+
+  /* TEMPLATES */
+  .section{padding:4rem 2rem;max-width:1000px;margin:0 auto}
+  .section-label{text-align:center;font-size:12px;color:#6366f1;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem}
+  .section-title{text-align:center;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;color:#fff;margin-bottom:0.75rem}
+  .section-sub{text-align:center;color:#888;margin-bottom:3rem;max-width:500px;margin-left:auto;margin-right:auto}
+  .templates{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .template-card{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:1.5rem;transition:border-color 0.2s}
+  .template-card:hover{border-color:#6366f1}
+  .template-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem}
+  .template-card h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
+  .template-card p{font-size:13px;color:#666;line-height:1.5}
+  .template-tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:6px;margin-top:10px;background:#1e1e2e;color:#a5b4fc}
+
+  /* FEATURES */
+  .features{background:#111;padding:4rem 2rem}
+  .features-inner{max-width:900px;margin:0 auto}
+  .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:3rem}
+  .feature{display:flex;gap:12px;align-items:flex-start}
+  .feature-icon{width:36px;height:36px;background:#1e1e2e;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+  .feature h4{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+  .feature p{font-size:13px;color:#666}
+
+  /* PRICING */
+  .pricing{padding:4rem 2rem;max-width:480px;margin:0 auto;text-align:center}
+  .price-card{background:#111;border:1px solid #2e2e4e;border-radius:16px;padding:2.5rem;position:relative;overflow:hidden}
+  .price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6366f1,#a855f7)}
+  .popular-badge{background:#6366f1;color:#fff;font-size:11px;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:1.5rem;font-weight:500}
+  .price{font-size:56px;font-weight:800;color:#fff;line-height:1}
+  .price sup{font-size:24px;vertical-align:top;margin-top:10px;color:#a5b4fc}
+  .price-note{font-size:13px;color:#666;margin-top:6px;margin-bottom:1.5rem}
+  .price-features{text-align:left;margin:1.5rem 0;display:flex;flex-direction:column;gap:10px}
+  .price-feature{display:flex;align-items:center;gap:10px;font-size:14px;color:#ccc}
+  .price-feature::before{content:'✓';color:#6366f1;font-weight:700;flex-shrink:0}
+  .guarantee{margin-top:1rem;font-size:12px;color:#555}
+
+  /* TESTIMONIALS */
+  .testimonials{padding:4rem 2rem;background:#0d0d0d}
+  .testimonials-inner{max-width:900px;margin:0 auto}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:3rem}
+  .testimonial{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:1.5rem}
+  .testimonial-text{font-size:14px;color:#ccc;line-height:1.6;margin-bottom:1rem}
+  .testimonial-author{display:flex;align-items:center;gap:10px}
+  .avatar{width:36px;height:36px;border-radius:50%;background:#1e1e2e;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#a5b4fc}
+  .author-info p{font-size:13px;font-weight:500;color:#fff}
+  .author-info span{font-size:11px;color:#555}
+  .stars{color:#f59e0b;font-size:12px;margin-bottom:10px}
+
+  /* FAQ */
+  .faq{padding:4rem 2rem;max-width:700px;margin:0 auto}
+  .faq-item{border-bottom:1px solid #1a1a1a;padding:1.25rem 0}
+  .faq-q{font-size:15px;font-weight:500;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+  .faq-q span{color:#6366f1;font-size:20px;transition:transform 0.2s}
+  .faq-a{font-size:14px;color:#666;margin-top:10px;display:none;line-height:1.7}
+  .faq-item.open .faq-a{display:block}
+  .faq-item.open .faq-q span{transform:rotate(45deg)}
+
+  /* CTA */
+  .cta{text-align:center;padding:5rem 2rem;background:linear-gradient(180deg,#0a0a0a,#0d0b1e)}
+  .cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:#fff;margin-bottom:1rem}
+  .cta p{color:#888;margin-bottom:2rem;font-size:1rem}
+
+  /* FOOTER */
+  footer{text-align:center;padding:2rem;border-top:1px solid #1a1a1a;font-size:13px;color:#444}
+
+  /* PAYPAL MODAL */
+  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;align-items:center;justify-content:center;padding:1rem}
+  .modal-overlay.open{display:flex}
+  .modal{background:#111;border:1px solid #2e2e4e;border-radius:16px;padding:2rem;width:100%;max-width:420px;text-align:center}
+  .modal h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+  .modal p{font-size:14px;color:#888;margin-bottom:1.5rem}
+  .modal-price{font-size:36px;font-weight:800;color:#6366f1;margin-bottom:1.5rem}
+  .paypal-btn{background:#ffc439;color:#003087;padding:14px 28px;border-radius:10px;font-size:16px;font-weight:700;border:none;cursor:pointer;width:100%;margin-bottom:12px;transition:all 0.2s}
+  .paypal-btn:hover{background:#f0b429}
+  .modal-close{background:transparent;border:1px solid #333;color:#888;padding:10px 20px;border-radius:8px;font-size:14px;cursor:pointer;width:100%}
+  .modal-close:hover{border-color:#666}
+  .modal-note{font-size:11px;color:#444;margin-top:12px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Resume<span>Pro</span></div>
+  <a href="#pricing" class="nav-cta">Get Templates — $9</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">⚡ Instant download · 5 templates included</div>
+  <h1>Resumes that get you <span>hired</span></h1>
+  <p>5 professionally designed, ATS-friendly resume templates. Stand out from hundreds of applicants and land more interviews.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="openModal()">Get All 5 Templates — $9</button>
+    <a href="#templates" class="btn-secondary">See Templates</a>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="proof-inner">
+    <div class="proof-stat"><strong>5</strong>Professional templates</div>
+    <div class="proof-stat"><strong>ATS</strong>Optimized layouts</div>
+    <div class="proof-stat"><strong>$9</strong>One time payment</div>
+    <div class="proof-stat"><strong>⚡</strong>Instant download</div>
+  </div>
+</div>
+
+<!-- TEMPLATES -->
+<section class="section" id="templates">
+  <div class="section-label">What's included</div>
+  <h2 class="section-title">5 templates for every career</h2>
+  <p class="section-sub">Whether you're entry level or executive, there's a template built for your situation.</p>
+  <div class="templates">
+    <div class="template-card">
+      <div class="template-icon" style="background:#1e1e2e">📋</div>
+      <h3>Classic Pro</h3>
+      <p>Clean, traditional layout that works for any industry. Timeless and recruiter-approved.</p>
+      <span class="template-tag">Any industry</span>
+    </div>
+    <div class="template-card">
+      <div class="template-icon" style="background:#1a1a2e">✨</div>
+      <h3>Modern Minimal</h3>
+      <p>Sleek contemporary design for corporate, finance, and business roles.</p>
+      <span class="template-tag">Corporate & Finance</span>
+    </div>
+    <div class="template-card">
+      <div class="template-icon" style="background:#1e1a1a">🎨</div>
+      <h3>Creative Bold</h3>
+      <p>Eye-catching sidebar design that makes creative professionals unforgettable.</p>
+      <span class="template-tag">Design & Media</span>
+    </div>
+    <div class="template-card">
+      <div class="template-icon" style="background:#1a1e1a">💻</div>
+      <h3>Tech & Dev</h3>
+      <p>Skills-first layout built specifically for software engineers and developers.</p>
+      <span class="template-tag">Tech & Engineering</span>
+    </div>
+    <div class="template-card">
+      <div class="template-icon" style="background:#1e1c1a">👔</div>
+      <h3>Executive</h3>
+      <p>Premium design for directors, VPs, and senior leaders who command attention.</p>
+      <span class="template-tag">Senior & Leadership</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="features-inner">
+    <div class="section-label" style="text-align:center">Why these templates</div>
+    <h2 class="section-title">Built to get you hired</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">🤖</div>
+        <div>
+          <h4>ATS optimized</h4>
+          <p>Passes automated screening systems so your resume reaches a human.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <div>
+          <h4>Instant download</h4>
+          <p>Get all 5 templates immediately after payment. No waiting.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">✏️</div>
+        <div>
+          <h4>Easy to edit</h4>
+          <p>Clean PDF format — open, fill in your details, done.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <div>
+          <h4>Any device</h4>
+          <p>Works on phone, tablet, or computer. No special software needed.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <div>
+          <h4>Recruiter approved</h4>
+          <p>Layouts designed around what hiring managers actually want to see.</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💰</div>
+        <div>
+          <h4>One time payment</h4>
+          <p>Pay once, use forever. No subscriptions, no hidden fees.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-label">Pricing</div>
+  <h2 class="section-title" style="margin-bottom:2rem">Simple, one-time price</h2>
+  <div class="price-card">
+    <div class="popular-badge">Most popular</div>
+    <div class="price"><sup>$</sup>9</div>
+    <div class="price-note">one time payment · instant access</div>
+    <div class="price-features">
+      <div class="price-feature">All 5 resume templates included</div>
+      <div class="price-feature">ATS-friendly layouts</div>
+      <div class="price-feature">Classic, Minimal, Creative, Tech & Executive</div>
+      <div class="price-feature">Instant PDF download</div>
+      <div class="price-feature">Works on any device</div>
+      <div class="price-feature">Use for unlimited job applications</div>
+    </div>
+    <button class="btn-primary" style="width:100%;font-size:17px;padding:16px" onclick="openModal()">Buy Now — $9</button>
+    <div class="guarantee">🔒 Secure payment via Cash App</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label" style="text-align:center">Results</div>
+    <h2 class="section-title">People are getting hired</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Got 3 interview callbacks in the first week after switching to the Modern Minimal template. Worth every penny."</p>
+        <div class="testimonial-author">
+          <div class="avatar">JM</div>
+          <div class="author-info"><p>Jordan M.</p><span>Marketing Manager</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The Tech template is exactly what I needed. Clean, ATS-friendly, and makes my skills section pop. Landed my dev job!"</p>
+        <div class="testimonial-author">
+          <div class="avatar">AS</div>
+          <div class="author-info"><p>Alex S.</p><span>Software Engineer</span></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I'd been job hunting for 2 months with no response. Changed to the Executive template and had 2 interviews in a week."</p>
+        <div class="testimonial-author">
+          <div class="avatar">TR</div>
+          <div class="author-info"><p>Taylor R.</p><span>Operations Director</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-label" style="text-align:center">FAQ</div>
+  <h2 class="section-title" style="margin-bottom:2rem">Common questions</h2>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What do I get after buying? <span>+</span></div>
+    <div class="faq-a">You get instant access to all 5 resume templates as PDF files. Download them immediately after payment and start customizing.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">How do I edit the templates? <span>+</span></div>
+    <div class="faq-a">The templates are PDF files with clear placeholder text showing exactly what to replace. You can edit PDFs using free tools like Adobe Acrobat Reader, Smallpdf, or any PDF editor.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Are these ATS friendly? <span>+</span></div>
+    <div class="faq-a">Yes. All 5 templates are designed with clean layouts and standard formatting that applicant tracking systems can read correctly.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">What if I need help? <span>+</span></div>
+    <div class="faq-a">Email us at Laytonm2009@gmail.com and we'll get back to you within 24 hours.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Is payment secure? <span>+</span></div>
+    <div class="faq-a">Yes. Payments are processed securely through PayPal. We never see or store your payment information.</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Ready to land more interviews?</h2>
+  <p>Join hundreds of job seekers who upgraded their resume and started getting callbacks.</p>
+  <button class="btn-primary" style="font-size:17px;padding:16px 32px" onclick="openModal()">Get All 5 Templates — $9</button>
+</section>
+
+<footer>
+  <p>© 2026 ResumePro · <a href="mailto:Laytonm2009@gmail.com" style="color:#6366f1">Contact</a></p>
+</footer>
+
+<!-- PAYPAL MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Get your templates</h3>
+    <p>5 professional resume templates — instant download</p>
+    <div class="modal-price">$9</div>
+    <a href="https://cash.app/$laytonmodesittt/9" target="_blank" class="paypal-btn" style="display:block;text-decoration:none;text-align:center;background:#00D64F;color:#000">Pay with Cash App — $9</a>
+    <button class="modal-close" onclick="closeModal()">Cancel</button>
+    <p class="modal-note">🔒 Secure payment via Cash App · Templates delivered to your email within 24hrs</p>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()})
+function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
+</script>
+
+</body>
+</html>
